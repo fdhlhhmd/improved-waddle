@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Docket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Docket</h1>
+    <p id="sum" aria-live="polite"></p>
+  </header>
+
+  <form class="add" id="add" autocomplete="off">
+    <input type="text" id="title" placeholder="What needs doing?" aria-label="Task title" maxlength="120" required>
+    <fieldset class="seg" aria-label="Priority">
+      <label><input type="radio" name="pri" value="0"><span><b class="bars l0"><i></i><i></i><i></i></b>Low</span></label>
+      <label><input type="radio" name="pri" value="1" checked><span><b class="bars l1"><i></i><i></i><i></i></b>Medium</span></label>
+      <label><input type="radio" name="pri" value="2"><span><b class="bars l2"><i></i><i></i><i></i></b>High</span></label>
+    </fieldset>
+    <select class="dest" id="dest" aria-label="Add to"><option value="todo">Add to To do</option><option value="backlog">Add to Backlog</option></select>
+    <button class="go" type="submit">Add task</button>
+  </form>
+
+  <main class="board" id="board"></main>
+
+  <section class="burn" aria-labelledby="bt">
+    <div class="burn-head"><h2 id="bt">Burndown</h2><button class="restart" id="restart" type="button">Restart sprint</button></div>
+    <div id="chart"></div>
+    <p class="note" id="burnnote"></p>
+  </section>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
